@@ -1,5 +1,8 @@
 public class Test {
     /*
+    Test-klass Testa logikklassen med 5 testfall. Tips ENKLA saker, en bokstav, en morsekod
+flera tecken, olika tecken. Testa felhanteringar i systemet. Stoppar vi in något som
+inte ska vara i systemet så ska vi KANSKE få tomt svar eller felmeddelande
 A .-
 B -...
 C -.-.
