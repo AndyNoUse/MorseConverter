@@ -4,7 +4,13 @@ import java.util.Scanner;
 //Läser in - Skickar till Logic - skriver ut text Klassen
 public class Main {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Logic converter = new Logic();
+        converter.loadMorseToLetterLib();
+        String input = scanner.nextLine();
 
+        converter.convertMorse(input);
+        System.out.println("Översätts till " + converter.getOutput());
     }
     /*
    Krav:
@@ -36,7 +42,7 @@ av ord behöver inte hanteras
 .... . . --- = HEJ
 .... . .-.. .-.. --- .-- --- = HELLOWORLD
 HELLO WORLD = .... . .-.. .-.. --- .-- --- .-. .-.. -..
-Vi behöver INTE seperation för ord!
+*Vi behöver INTE seperation för ord!
 
 Tips:
 -Inläsning och utskrift av morsekod kan utföras med t.ex. Scanner och System.out.println
