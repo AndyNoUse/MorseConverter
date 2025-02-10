@@ -1,4 +1,3 @@
-import java.util.HashMap;
 import java.util.Scanner;
 
 //Läser in - Skickar till Logic - skriver ut text Klassen
@@ -6,7 +5,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Logic converter = new Logic();
-        converter.loadMorseToLetterLib();
+        converter.loadConversionLibrary();
 
         System.out.println("Vad vill du översätta? A = .-");
         String input = scanner.nextLine();
@@ -14,9 +13,12 @@ public class Main {
         try {
             converter.convertMorse(input);
             System.out.println("Översätts till " + converter.getOutput());
+            System.out.println();
+
         }catch (Exception e){
             System.out.println("Oväntat fel!");
             System.out.println(e);
+
         }
     }
     /*

@@ -47,42 +47,62 @@ Z --..
     @Test
     public void convertToA() {
         Logic converter = new Logic();
-        converter.loadMorseToLetterLib();
+        converter.loadConversionLibrary();
         converter.convertMorse(".-");
         converter.getOutput();
         assertEquals("A", converter.getOutput());
     }
+
     @Test
     public void convertToC() {
         Logic converter = new Logic();
-        converter.loadMorseToLetterLib();
+        converter.loadConversionLibrary();
         converter.convertMorse("-.-.");
         converter.getOutput();
         assertEquals("C", converter.getOutput());
     }
+
     @Test
     public void convertTo9() {
         Logic converter = new Logic();
-        converter.loadMorseToLetterLib();
+        converter.loadConversionLibrary();
         converter.convertMorse("----.");
         converter.getOutput();
         assertEquals("9", converter.getOutput());
     }
+
     @Test
     public void convertToZ() {
         Logic converter = new Logic();
-        converter.loadMorseToLetterLib();
+        converter.loadConversionLibrary();
         converter.convertMorse("--..");
         converter.getOutput();
         assertEquals("Z", converter.getOutput());
     }
+
+    @Test
+    public void letterAToMorse() {
+        Logic converter = new Logic();
+        converter.loadConversionLibrary();
+        converter.convertEng("A");
+        converter.getOutput();
+        assertEquals(".-", converter.getOutput());
+    }
+
     @Test
     public void helloWorldToMorse() {
         Logic converter = new Logic();
-        converter.loadMorseToLetterLib();
-        converter.convertMorse("--..");
+        converter.loadConversionLibrary();
+        converter.convertMorse(".... . .-.. .-.. ---  .-- --- .-. .-.. -..");
         converter.getOutput();
         assertEquals("Hello world", converter.getOutput());
+    }
+
+    @Test
+    public void dumpLibrary() {
+        Logic converter = new Logic();
+        converter.dumpLib();
+        assertEquals("", converter.dumpLib());
     }
 }
 

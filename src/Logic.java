@@ -1,12 +1,14 @@
 import java.util.HashMap;
+import java.util.Map;
 
 public class Logic {
     //Logik-klass Utför konverteringen
     private String input = "";
     private String output = "";
     private HashMap<String, String> morseLib = new HashMap<>();
+    private HashMap<String, String> letterLib = new HashMap<>();
 
-    public void loadMorseToLetterLib(){
+    public void loadConversionLibrary() {
         morseLib.put(".-", "A");
         morseLib.put("-...", "B");
         morseLib.put("-.-.", "C");
@@ -29,7 +31,7 @@ public class Logic {
         morseLib.put("...-", "V");
         morseLib.put(".--", "W");
         morseLib.put("-..-", "X");
-        morseLib.put("-.--", "X");
+        morseLib.put("-.--", "Y");
         morseLib.put("--..", "Z");
         morseLib.put("-----", "0");
         morseLib.put(".----", "1");
@@ -41,16 +43,31 @@ public class Logic {
         morseLib.put("--...", "7");
         morseLib.put("---..", "8");
         morseLib.put("----.", "9");
-
+        // key , value
+        for (Map.Entry<String, String> entry : morseLib.entrySet()){
+            letterLib.put(entry.getValue(), entry.getKey());
+        }
     }
 
+
     public void convertMorse(String input) {
-        this.input =input;
+        this.input = input;
         output = morseLib.get(input);
     }
 
     public String getOutput() {
         return output;
+    }
+
+    public void convertEng(String letters) {
+        this.input = letters;
+    }
+
+    public Object dumpLib() {
+        for (String i : morseLib.keySet()) {
+            return("key: " + i + " value: " + morseLib.get(i));
+        }
+        return "Shit";
     }
 }
 //public static void main(String[] args) {
