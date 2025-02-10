@@ -42,9 +42,8 @@ public class Logic {
         morseLib.put("---..", "8");
         morseLib.put("----.", "9");
 
-
-
     }
+
     public void convertMorse(String input) {
         this.input =input;
         output = morseLib.get(input);

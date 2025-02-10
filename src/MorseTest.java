@@ -76,5 +76,13 @@ Z --..
         converter.getOutput();
         assertEquals("Z", converter.getOutput());
     }
+    @Test
+    public void helloWorldToMorse() {
+        Logic converter = new Logic();
+        converter.loadMorseToLetterLib();
+        converter.convertMorse("--..");
+        converter.getOutput();
+        assertEquals("Hello world", converter.getOutput());
+    }
 }
 

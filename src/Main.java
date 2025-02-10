@@ -7,10 +7,17 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         Logic converter = new Logic();
         converter.loadMorseToLetterLib();
+
+        System.out.println("Vad vill du översätta? A = .-");
         String input = scanner.nextLine();
 
-        converter.convertMorse(input);
-        System.out.println("Översätts till " + converter.getOutput());
+        try {
+            converter.convertMorse(input);
+            System.out.println("Översätts till " + converter.getOutput());
+        }catch (Exception e){
+            System.out.println("Oväntat fel!");
+            System.out.println(e);
+        }
     }
     /*
    Krav:
