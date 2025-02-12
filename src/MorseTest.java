@@ -48,7 +48,7 @@ Z --..
     public void convertToA() {
         Logic converter = new Logic();
         converter.loadConversionLibrary();
-        converter.convertMorse(".-");
+        converter.convert(".-");
         converter.getOutput();
         assertEquals("A", converter.getOutput());
     }
@@ -57,7 +57,7 @@ Z --..
     public void convertToC() {
         Logic converter = new Logic();
         converter.loadConversionLibrary();
-        converter.convertMorse("-.-.");
+        converter.convert("-.-.");
         converter.getOutput();
         assertEquals("C", converter.getOutput());
     }
@@ -66,7 +66,7 @@ Z --..
     public void convertTo9() {
         Logic converter = new Logic();
         converter.loadConversionLibrary();
-        converter.convertMorse("----.");
+        converter.convert("----.");
         converter.getOutput();
         assertEquals("9", converter.getOutput());
     }
@@ -75,7 +75,7 @@ Z --..
     public void convertToZ() {
         Logic converter = new Logic();
         converter.loadConversionLibrary();
-        converter.convertMorse("--..");
+        converter.convert("--..");
         converter.getOutput();
         assertEquals("Z", converter.getOutput());
     }
@@ -84,7 +84,7 @@ Z --..
     public void letterAToMorse() {
         Logic converter = new Logic();
         converter.loadConversionLibrary();
-        converter.convertEng("A");
+        converter.convert("A");
         converter.getOutput();
         assertEquals(".-", converter.getOutput());
     }
@@ -93,7 +93,7 @@ Z --..
     public void helloWorldToMorse() {
         Logic converter = new Logic();
         converter.loadConversionLibrary();
-        converter.convertMorse(".... . .-.. .-.. ---  .-- --- .-. .-.. -..");
+        converter.convert(".... . .-.. .-.. ---  .-- --- .-. .-.. -..");
         converter.getOutput();
         assertEquals("Hello world", converter.getOutput());
     }
@@ -101,7 +101,7 @@ Z --..
     @Test
     public void dumpLibrary() {
         Logic converter = new Logic();
-        converter.dumpLib();
+        converter.loadConversionLibrary();
         assertEquals("", converter.dumpLib());
     }
 }

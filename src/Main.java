@@ -7,13 +7,14 @@ public class Main {
         Logic converter = new Logic();
         converter.loadConversionLibrary();
 
-        System.out.println("Vad vill du översätta? A = .-");
+        System.out.println("Vad vill du översätta? .- Blir A");
         String input = scanner.nextLine();
 
         try {
-            converter.convertMorse(input);
+            converter.convert(input);
+            System.out.println(converter.getOutput());
             System.out.println("Översätts till " + converter.getOutput());
-            System.out.println();
+            System.out.println(converter.dumpLib());
 
         }catch (Exception e){
             System.out.println("Oväntat fel!");

@@ -1,12 +1,11 @@
 import java.util.HashMap;
-import java.util.Map;
 
 public class Logic {
     //Logik-klass Utför konverteringen
     private String input = "";
     private String output = "";
     private HashMap<String, String> morseLib = new HashMap<>();
-    private HashMap<String, String> letterLib = new HashMap<>();
+    private HashMap<String, String> tempLib = new HashMap<>();
 
     public void loadConversionLibrary() {
         morseLib.put(".-", "A");
@@ -44,13 +43,13 @@ public class Logic {
         morseLib.put("---..", "8");
         morseLib.put("----.", "9");
         // key , value
-        for (Map.Entry<String, String> entry : morseLib.entrySet()){
-            letterLib.put(entry.getValue(), entry.getKey());
+        for (String key : morseLib.keySet()) {
+            tempLib.put(morseLib.get(key), key);
         }
+        morseLib.putAll(tempLib);
     }
 
-
-    public void convertMorse(String input) {
+    public void convert(String input) {
         this.input = input;
         output = morseLib.get(input);
     }
@@ -63,13 +62,14 @@ public class Logic {
         this.input = letters;
     }
 
-    public Object dumpLib() {
-        for (String i : morseLib.keySet()) {
-            return("key: " + i + " value: " + morseLib.get(i));
-        }
-        return "Shit";
-    }
+    public String dumpLib() {
+        System.out.println("MorseLibrary" +morseLib);
+     //   System.out.println("LetterLibrary" +letterLib);
+
+        return "Shit went wrong";
+    };
 }
+
 //public static void main(String[] args) {
 //            HashMap<String, String> simpsons = new HashMap<>(); //Kan skriva String, String i den nya diamanten
 ////Gör inte det för att vi redan fattar det???
