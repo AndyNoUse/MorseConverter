@@ -97,12 +97,22 @@ Z --..
         converter.getOutput();
         assertEquals("Hello world", converter.getOutput());
     }
+    @Test
+    public void morseToHelloWorld() {
+        Logic converter = new Logic();
+        converter.loadConversionLibrary();
+        converter.convert("Hello world");
+        converter.getOutput();
+        assertEquals(".... . .-.. .-.. ---  .-- --- .-. .-.. -..", converter.getOutput());
+    }
 
     @Test
     public void dumpLibrary() {
         Logic converter = new Logic();
         converter.loadConversionLibrary();
-        assertEquals("", converter.dumpLib());
+     //   assertEquals("", converter.dumpLib());
+        System.out.println();
+        assertEquals("72", converter.librarySize());
     }
 }
 
