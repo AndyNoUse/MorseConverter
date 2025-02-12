@@ -90,18 +90,25 @@ Z --..
     }
 
     @Test
-    public void helloWorldToMorse() {//Actual   :......-..-1-1.-----.-..-..-..
+    public void helloWorldToMorse() {
         Logic converter = new Logic();
         converter.loadConversionLibrary();
         converter.convert("HELloWORLD");
         assertEquals(".... . .-.. .-.. --- .-- --- .-. .-.. -..", converter.getOutput());
     }
     @Test
-    public void morseToHelloWorld() {//Actual   :HELLOWORLD
+    public void hejToMorse() {
         Logic converter = new Logic();
         converter.loadConversionLibrary();
-        converter.convert(".... . .-.. .-.. ---  .-- --- .-. .-.. -..");
-        assertEquals("HELLO WORLD", converter.getOutput());
+        converter.convert("Hej");
+        assertEquals(".... . . ---", converter.getOutput());
+    }
+    @Test
+    public void morseToHelloWorld() {
+        Logic converter = new Logic();
+        converter.loadConversionLibrary();
+        converter.convert(".... . .-.. .-.. --- .-- --- .-. .-.. -..");
+        assertEquals("HELLOWORLD", converter.getOutput());
     }
 
     @Test
@@ -111,6 +118,27 @@ Z --..
      //   assertEquals("", converter.dumpLib());
         System.out.println(converter.dumpLib());  //36 A-Z och 0-9. Mellanslag +1
         assertEquals("74", converter.librarySize());
+    }
+    @Test
+    public void felhanteringAvSvensktAlfabet() {
+        Logic converter = new Logic();
+        converter.loadConversionLibrary();
+        converter.convert("åäö");
+        assertEquals("A", converter.getOutput());
+    }
+    @Test
+    public void felhanteringAvOgiltigaTecken() {
+        Logic converter = new Logic();
+        converter.loadConversionLibrary();
+        converter.convert("<^");
+        assertEquals("A", converter.getOutput());
+    }
+    @Test
+    public void hurHanterasCombo() {
+        Logic converter = new Logic();
+        converter.loadConversionLibrary();
+        converter.convert("80-procentig");
+        assertEquals("A", converter.getOutput());
     }
 }
 

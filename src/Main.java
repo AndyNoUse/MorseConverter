@@ -23,28 +23,29 @@ public class Main {
     }
     /*
    Krav:
-Skriv ett program som gör om morsekod till engelska och engelska till morsekod
-Skriv programmet med minst en logikklass samt en klass som läser in text och skriver ut
-text (med en main-metod).
+Skriv ett program som gör om morsekod till engelska och engelska till morsekod X
+Skriv programmet med minst en logikklass samt en klass som läser in text och skriver ut X
+text (med en main-metod).X
 Utveckla programmet i TDD och skriv minst 5 JUnit-testfall
 
-*Logik-klass Utför konverteringen
-**Main-klass läser in text - skickar till logik - Hämtar resultatet från logik
-Test-klass Testa logikklassen med 5 testfall. Tips ENKLA saker, en bokstav, en morsekod
-flera tecken, olika tecken. Testa felhanteringar i systemet. Stoppar vi in något som
+*Logik-klass Utför konverteringen X
+**Main-klass läser in text - skickar till logik - Hämtar resultatet från logik X
+Test-klass Testa logikklassen med 5 testfall. Tips ENKLA saker, en bokstavX, en morsekodX
+flera teckenX, olika tecken.
+Testa felhanteringar i systemet. Stoppar vi in något som
 inte ska vara i systemet så ska vi KANSKE få tomt svar eller felmeddelande
 
 Skapa MINST två felhanteringar i systemet som hanterar två saker som användaren
 kan göra som går utanför det vanliga användandet av systemet
 
-Vi skriver Bokstäver med punkter bindestreck
-Vi ska kunna göra åt båda hållen text > morsekod morsekod <text
+XVi skriver Bokstäver med punkter bindestreck
+XVi ska kunna göra åt båda hållen text > morsekod morsekod <text
 
 Krav fortsättning:
 Använd den internationella morsekoden (se slide 6)
-för bokstäverna A till Z
+för bokstäverna A till ZX
 * Korta och långa signaler ska representeras med
-punkt (.) och bindestreck (-)
+punkt (.) och bindestreck (-)X
 F = ..-.
 Flera bokstäver skall gå att hantera men separation
 av ord behöver inte hanteras
