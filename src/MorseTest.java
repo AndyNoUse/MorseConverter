@@ -90,20 +90,18 @@ Z --..
     }
 
     @Test
-    public void helloWorldToMorse() {
+    public void helloWorldToMorse() {//Actual   :......-..-1-1.-----.-..-..-..
         Logic converter = new Logic();
         converter.loadConversionLibrary();
-        converter.convert(".... . .-.. .-.. --- .-- --- .-. .-.. -..");
-        converter.getOutput();
-        assertEquals("HELLOWORLD", converter.getOutput());
+        converter.convert("HELloWORLD");
+        assertEquals(".... . .-.. .-.. --- .-- --- .-. .-.. -..", converter.getOutput());
     }
     @Test
-    public void morseToHelloWorld() {
+    public void morseToHelloWorld() {//Actual   :HELLOWORLD
         Logic converter = new Logic();
         converter.loadConversionLibrary();
-        converter.convert("hello world");
-        converter.getOutput();
-        assertEquals(".... . .-.. .-.. --- .-- --- .-. .-.. -..", converter.getOutput());
+        converter.convert(".... . .-.. .-.. ---  .-- --- .-. .-.. -..");
+        assertEquals("HELLO WORLD", converter.getOutput());
     }
 
     @Test
@@ -111,8 +109,8 @@ Z --..
         Logic converter = new Logic();
         converter.loadConversionLibrary();
      //   assertEquals("", converter.dumpLib());
-        System.out.println();  //36 A-Z och 0-9. Mellanslag +1
-        assertEquals("73", converter.librarySize());
+        System.out.println(converter.dumpLib());  //36 A-Z och 0-9. Mellanslag +1
+        assertEquals("74", converter.librarySize());
     }
 }
 

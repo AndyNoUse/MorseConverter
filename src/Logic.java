@@ -8,7 +8,7 @@ public class Logic {
     private HashMap<String, String> tempLib = new HashMap<>();
 
     public void loadConversionLibrary() {
-        mainLib.put(" "," ");
+        mainLib.put(" ", "");
         mainLib.put(".-", "A");
         mainLib.put("-...", "B");
         mainLib.put("-.-.", "C");
@@ -52,36 +52,31 @@ public class Logic {
         mainLib.putAll(tempLib);
     }
 
-    public void convert(String input) {
+    public String convert(String input) {
         try {
             output = "";
             this.input = input.toUpperCase();
 
-            if (input.contains(".") || input.contains("-")) {
+            if (input.contains(".") || input.contains("-")) {   //Om det är Morsekod
                 String[] morseSnippets = input.split(" ");
                 for (String morseSnippet : morseSnippets) {
-                    output = output.concat(mainLib.getOrDefault(morseSnippet, "-1"));            //översätt varje bokstav eller morseKod översätt mot sitt value i mainLib
-
+                    output = output.concat(mainLib.getOrDefault(morseSnippet, "-1"));
                 }
-            } else {
-                char[] lettersList = input.toCharArray();
-                for (char everyLetter : lettersList) {
-                    output = mainLib.get(everyLetter + "");             //översätt varje bokstav eller morseKod översätt mot sitt value i mainLib
-
-                    //output = output.concat(mainLib.getOrDefault(String.valueOf(everyLetter), "?"));
-
+            } else {    //Annars är det vanlig text
+                char[] letters = this.input.toCharArray();
+                for (char letter : letters) {
+                    output = output.concat(mainLib.getOrDefault(String.valueOf(letter), "-1")+ " ");
                 }
             }
-
-            //   output = mainLib.get(input);
 
         } catch (Exception e) {
             System.out.println("Något gick fel" + e);
         }
+        return output.trim();
     }
 
     public String getOutput() {
-        return output;
+        return output.trim();
     }
 
     public void convertEng(String letters) {
@@ -89,7 +84,6 @@ public class Logic {
     }
 
     public String dumpLib() {
-        System.out.println("MorseLibrary" + mainLib);
         //   System.out.println("LetterLibrary" +letterLib);
         return mainLib.toString();
     }
