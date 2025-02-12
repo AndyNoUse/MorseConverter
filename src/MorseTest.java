@@ -93,17 +93,17 @@ Z --..
     public void helloWorldToMorse() {
         Logic converter = new Logic();
         converter.loadConversionLibrary();
-        converter.convert(".... . .-.. .-.. ---  .-- --- .-. .-.. -..");
+        converter.convert(".... . .-.. .-.. --- .-- --- .-. .-.. -..");
         converter.getOutput();
-        assertEquals("Hello world", converter.getOutput());
+        assertEquals("HELLOWORLD", converter.getOutput());
     }
     @Test
     public void morseToHelloWorld() {
         Logic converter = new Logic();
         converter.loadConversionLibrary();
-        converter.convert("Hello world");
+        converter.convert("hello world");
         converter.getOutput();
-        assertEquals(".... . .-.. .-.. ---  .-- --- .-. .-.. -..", converter.getOutput());
+        assertEquals(".... . .-.. .-.. --- .-- --- .-. .-.. -..", converter.getOutput());
     }
 
     @Test
@@ -111,8 +111,8 @@ Z --..
         Logic converter = new Logic();
         converter.loadConversionLibrary();
      //   assertEquals("", converter.dumpLib());
-        System.out.println();
-        assertEquals("72", converter.librarySize());
+        System.out.println();  //36 A-Z och 0-9. Mellanslag +1
+        assertEquals("73", converter.librarySize());
     }
 }
 

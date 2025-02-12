@@ -8,6 +8,7 @@ public class Logic {
     private HashMap<String, String> tempLib = new HashMap<>();
 
     public void loadConversionLibrary() {
+        mainLib.put(" "," ");
         mainLib.put(".-", "A");
         mainLib.put("-...", "B");
         mainLib.put("-.-.", "C");
@@ -53,31 +54,24 @@ public class Logic {
 
     public void convert(String input) {
         try {
-            this.input = input.toUpperCase();    //Gör det till stora bokstäver
+            output = "";
+            this.input = input.toUpperCase();
 
-            //Om input är en hel mening eller en Morse-kodsträng
-            // måste du dela upp den och konvertera varje enskild del.
             if (input.contains(".") || input.contains("-")) {
                 String[] morseSnippets = input.split(" ");
                 for (String morseSnippet : morseSnippets) {
-                    output = output.concat(mainLib.getOrDefault(morseSnippet, "-1"));
+                    output = output.concat(mainLib.getOrDefault(morseSnippet, "-1"));            //översätt varje bokstav eller morseKod översätt mot sitt value i mainLib
+
                 }
             } else {
-                char[] letters = input.toCharArray();
-                for (char letter : letters) {
-                    output += mainLib.get(letter + "");
-                    //output = output.concat(mainLib.getOrDefault(String.valueOf(letter), "?"));
+                char[] lettersList = input.toCharArray();
+                for (char everyLetter : lettersList) {
+                    output = mainLib.get(everyLetter + "");             //översätt varje bokstav eller morseKod översätt mot sitt value i mainLib
+
+                    //output = output.concat(mainLib.getOrDefault(String.valueOf(everyLetter), "?"));
 
                 }
             }
-
-            //dela upp... hur? split
-
-            //översätt varje bokstav eller morseKod översätt mot sitt value i mainLib
-
-            //sätt ihop med concat per översättning
-
-            //skicka till output
 
             //   output = mainLib.get(input);
 
