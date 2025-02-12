@@ -3,7 +3,7 @@ import java.util.HashMap;
 public class Logic {
     //Logik-klass Utför konverteringen
     private String input = "";
-    private String output = "";
+    private String output;
     private HashMap<String, String> mainLib = new HashMap<>();
     private HashMap<String, String> tempLib = new HashMap<>();
 
@@ -53,21 +53,31 @@ public class Logic {
 
     public void convert(String input) {
         try {
+            output = "";
             this.input = input.toUpperCase();    //Gör det till stora bokstäver
 
             //Om input är en hel mening eller en Morse-kodsträng
             // måste du dela upp den och konvertera varje enskild del.
+            if (input.contains(".") || input.contains("-")){
+                for
+            }
 
+            else{
+                char[] letters = input.toCharArray();
+                for (char letter : letters) {
+                    output += mainLib.get(letter + "");
+                }
+            }
 
-            //dela upp... hur? split
+                //dela upp... hur? split
 
-            //översätt varje bokstav eller morseKod översätt mot sitt value i mainLib
+                //översätt varje bokstav eller morseKod översätt mot sitt value i mainLib
 
-            //sätt ihop med concat per översättning
+                //sätt ihop med concat per översättning
 
-            //skicka till output
+                //skicka till output
 
-            output = mainLib.get(input);
+                output = mainLib.get(input);
 
         } catch (Exception e) {
             System.out.println("Något gick fel" + e);
