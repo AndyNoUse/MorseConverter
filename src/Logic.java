@@ -53,31 +53,33 @@ public class Logic {
 
     public void convert(String input) {
         try {
-            output = "";
             this.input = input.toUpperCase();    //Gör det till stora bokstäver
 
             //Om input är en hel mening eller en Morse-kodsträng
             // måste du dela upp den och konvertera varje enskild del.
-            if (input.contains(".") || input.contains("-")){
-                for
-            }
-
-            else{
+            if (input.contains(".") || input.contains("-")) {
+                String[] morseSnippets = input.split(" ");
+                for (String morseSnippet : morseSnippets) {
+                    output = output.concat(mainLib.getOrDefault(morseSnippet, "-1"));
+                }
+            } else {
                 char[] letters = input.toCharArray();
                 for (char letter : letters) {
                     output += mainLib.get(letter + "");
+                    //output = output.concat(mainLib.getOrDefault(String.valueOf(letter), "?"));
+
                 }
             }
 
-                //dela upp... hur? split
+            //dela upp... hur? split
 
-                //översätt varje bokstav eller morseKod översätt mot sitt value i mainLib
+            //översätt varje bokstav eller morseKod översätt mot sitt value i mainLib
 
-                //sätt ihop med concat per översättning
+            //sätt ihop med concat per översättning
 
-                //skicka till output
+            //skicka till output
 
-                output = mainLib.get(input);
+            //   output = mainLib.get(input);
 
         } catch (Exception e) {
             System.out.println("Något gick fel" + e);
