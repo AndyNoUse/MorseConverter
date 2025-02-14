@@ -60,7 +60,7 @@ public class Logic {
             if (input.contains(".") || input.contains("-")) {   //Om det är Morsekod
                 String[] morseSnippets = input.split(" ");
                 for (String morseSnippet : morseSnippets) {
-                    output = output.concat(mainLib.getOrDefault(morseSnippet, "-1"));
+                    output = output.concat(mainLib.getOrDefault(morseSnippet, "missingChar"));
                 }
             } else {    //Annars är det vanlig text
                 char[] letters = this.input.toCharArray();

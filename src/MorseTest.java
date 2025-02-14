@@ -101,7 +101,7 @@ Z --..
         Logic converter = new Logic();
         converter.loadConversionLibrary();
         converter.convert("Hej");
-        assertEquals(".... . . ---", converter.getOutput());
+        assertEquals(".... . .---", converter.getOutput());
     }
     @Test
     public void morseToHelloWorld() {
@@ -123,15 +123,15 @@ Z --..
     public void felhanteringAvSvensktAlfabet() {
         Logic converter = new Logic();
         converter.loadConversionLibrary();
-        converter.convert("åäö");
-        assertEquals("A", converter.getOutput());
+        converter.convert("Smörgåsräkmacka");
+        assertEquals("... -- -1 .-. --. -1 ... .-. -1 -.- -- .- -.-. -.- .-", converter.getOutput());
     }
     @Test
     public void felhanteringAvOgiltigaTecken() {
         Logic converter = new Logic();
         converter.loadConversionLibrary();
         converter.convert("<^");
-        assertEquals("A", converter.getOutput());
+        assertEquals("-1 -1", converter.getOutput());
     }
     @Test
     public void hurHanterasCombo() {

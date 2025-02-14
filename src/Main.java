@@ -13,7 +13,6 @@ public class Main {
         try {
             converter.convert(input);
             System.out.println("Översätts till " + converter.getOutput());
-            System.out.println(converter.dumpLib());
 
         }catch (Exception e){
             System.out.println("Oväntat fel!");
