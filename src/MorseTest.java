@@ -4,9 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 public class MorseTest {
     /*
-    Test-klass Testa logikklassen med 5 testfall. Tips ENKLA saker, en bokstav, en morsekod
-flera tecken, olika tecken. Testa felhanteringar i systemet. Stoppar vi in något som
-inte ska vara i systemet så ska vi KANSKE få tomt svar eller felmeddelande
+
 A .-
 B -...
 C -.-.
@@ -138,7 +136,8 @@ Z --..
         Logic converter = new Logic();
         converter.loadConversionLibrary();
         converter.convert("80-procentig");
-        assertEquals("A", converter.getOutput());
+        assertEquals("80-1procenting", converter.getOutput());
     }
+
 }
 

@@ -50,6 +50,7 @@ public class Logic {
             tempLib.put(mainLib.get(key), key); //Alla nycklar Temporary flip
         }
         mainLib.putAll(tempLib);
+        tempLib.clear();
     }
 
     public String convert(String input) {
@@ -60,7 +61,7 @@ public class Logic {
             if (input.contains(".") || input.contains("-")) {   //Om det är Morsekod
                 String[] morseSnippets = input.split(" ");
                 for (String morseSnippet : morseSnippets) {
-                    output = output.concat(mainLib.getOrDefault(morseSnippet, "missingChar"));
+                    output = output.concat(mainLib.getOrDefault(morseSnippet, "-1"));
                 }
             } else {    //Annars är det vanlig text
                 char[] letters = this.input.toCharArray();
@@ -79,12 +80,7 @@ public class Logic {
         return output.trim();
     }
 
-    public void convertEng(String letters) {
-        this.input = letters;
-    }
-
     public String dumpLib() {
-        //   System.out.println("LetterLibrary" +letterLib);
         return mainLib.toString();
     }
 

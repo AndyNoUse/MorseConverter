@@ -1,5 +1,5 @@
 import java.util.Scanner;
-
+//Ett program som gör om morsekod till engelska och engelska till morsekod
 //Läser in - Skickar till Logic - skriver ut text Klassen
 public class Main {
     public static void main(String[] args) {
@@ -7,18 +7,25 @@ public class Main {
         Logic converter = new Logic();
         converter.loadConversionLibrary();
 
-        System.out.println("Vad vill du översätta? .- Blir A");
-        String input = scanner.nextLine();
+        while (true) {
+            System.out.print("Skriv vad du vill översätta från/till morsekod:");
+            String input = scanner.nextLine();
 
-        try {
-            converter.convert(input);
-            System.out.println("Översätts till " + converter.getOutput());
+            try {
+                converter.convert(input);
+                System.out.println("Översattes till: " + converter.getOutput());
+                System.out.println("\nSkriv stop för att avsluta");
 
-        }catch (Exception e){
-            System.out.println("Oväntat fel!");
-            System.out.println(e);
+                if (input.equalsIgnoreCase("stop"))
+                    break;
 
+            }catch (Exception e){
+                System.out.println("Oväntat fel!");
+                System.out.println(e);
+
+            }
         }
+
     }
     /*
    Krav:
