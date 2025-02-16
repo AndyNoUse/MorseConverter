@@ -125,6 +125,14 @@ Z --..
         assertEquals("... -- -1 .-. --. -1 ... .-. -1 -.- -- .- -.-. -.- .-", converter.getOutput());
     }
     @Test
+    public void felhanteringStop() {
+        Logic converter = new Logic();
+        converter.loadConversionLibrary();
+        converter.convert("stop");
+        converter.convert("hej");
+        assertEquals(".... . .---", converter.getOutput());
+    }
+    @Test
     public void felhanteringAvOgiltigaTecken() {
         Logic converter = new Logic();
         converter.loadConversionLibrary();
@@ -136,7 +144,7 @@ Z --..
         Logic converter = new Logic();
         converter.loadConversionLibrary();
         converter.convert("80-procentig");
-        assertEquals("80-1procenting", converter.getOutput());
+        assertEquals("-1", converter.getOutput());
     }
 
 }

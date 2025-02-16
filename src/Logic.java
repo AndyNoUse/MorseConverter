@@ -1,7 +1,7 @@
 import java.util.HashMap;
 
 public class Logic {
-    //Logik-klass Utför konverteringen
+
     private String input = "";
     private String output;
     private HashMap<String, String> mainLib = new HashMap<>();

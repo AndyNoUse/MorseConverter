@@ -13,11 +13,13 @@ public class Main {
 
             try {
                 converter.convert(input);
+                if (input.equalsIgnoreCase("stop"))
+                    break;
+
                 System.out.println("Översattes till: " + converter.getOutput());
                 System.out.println("\nSkriv stop för att avsluta");
 
-                if (input.equalsIgnoreCase("stop"))
-                    break;
+
 
             }catch (Exception e){
                 System.out.println("Oväntat fel!");
